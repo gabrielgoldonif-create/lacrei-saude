@@ -59,7 +59,7 @@ export default function Sobre() {
 
           <Text style={{ marginTop: "16px" }}>
             Nosso objetivo é garantir que todas as pessoas possam buscar cuidado
-            sem medo, com acolhimento e qualidade.
+       sem medo, com acolhimento e qualidade.
           </Text>
         </Container>
       </Section>

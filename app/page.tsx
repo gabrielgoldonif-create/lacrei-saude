@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
  import Header from "../components/Header";
  import Button from "../components/Button";
-import Footer from   "../components/Footer";
+import Footer from "../components/Footer";
 
 const Main = styled.main`
   min-height: 100vh;
@@ -19,10 +19,10 @@ const Hero = styled.section`
   }
 `;
 
-  const Title = styled.h2`
+const Title = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
   font-size: 32px;
-     margin-bottom: 16px;
+  margin-bottom: 16px;
 
   @media (max-width: 768px) {
     font-size: 28px;
@@ -69,7 +69,7 @@ const InfoSection = styled.section`
   }
 `;
 
- const InfoBox = styled.div`
+const InfoBox = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   background: ${({ theme }) => theme.colors.white};
@@ -90,40 +90,44 @@ export default function Home() {
       <Hero aria-labelledby="hero-title">
         <Container>
           <HeroContent>
-      <Title id="hero-title">Bem-vindo ao Lacrei App</Title>
+            <Title id="hero-title">Bem-vindo ao Lacrei App</Title>
 
-                <Text>
+            <Text>
               Uma plataforma digital de impacto social que conecta pessoas da
               comunidade LGBTQIAPN+ a profissionais de saúde qualificados.
             </Text>
 
-    <ButtonGroup>
-          <Button
+            <ButtonGroup>
+              <Button
                 onClick={() =>
-                  setMessage("Você escolheu buscar profissionais. Em breve um de nossos atendentes entrará em")
+                  setMessage(
+                    "Você escolheu buscar profissionais. Em breve um de nossos atendentes entrará em contato. Aguarde!"
+                  )
                 }
               >
                 Buscar profissionais
-          </Button>
+              </Button>
 
               <Button onClick={() => router.push("/sobre")}>
                 Saiba mais
               </Button>
 
               <Button
-                  onClick={() => setMessage("Área de cadastro em preparação.Por favor, aguarde.")}
+                onClick={() =>
+                  setMessage("Área de cadastro em preparação. Por favor, aguarde.")
+                }
               >
                 Quero me cadastrar
               </Button>
             </ButtonGroup>
-     </HeroContent>
+          </HeroContent>
         </Container>
       </Hero>
 
-      <InfoSection aria-live=  "polite">
+      <InfoSection aria-live="polite">
         <Container>
           <InfoBox>
-              <Text>{message}</Text>
+            <Text>{message}</Text>
           </InfoBox>
         </Container>
       </InfoSection>

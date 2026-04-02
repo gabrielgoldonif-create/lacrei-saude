@@ -1,12 +1,25 @@
-import "@testing-library/jest-dom";
-import { describe, expect, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
-import Header from "../Header";
+import { ThemeProvider } from "styled-components";
+import Button from "../Button";
 
-describe("Header", () => {
-  it("renderiza o título Lacrei Saúde", () => {
-    render(<Header />);
+const theme = {
+  colors: {
+    primary: "#000",
+    primaryDark: "#111",
+    background: "#fff",
+    text: "#000",
+    white: "#fff",
+  },
+};
 
-    expect(screen.getByText("Lacrei Saúde")).toBeTruthy();
+describe("Button", () => {
+  it("renderiza o texto do botão", () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <Button>Teste</Button>
+      </ThemeProvider>
+    );
+
+    expect(screen.getByText("Teste")).toBeTruthy();
   });
 });
